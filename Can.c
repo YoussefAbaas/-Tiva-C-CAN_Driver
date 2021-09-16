@@ -104,8 +104,8 @@ void CAN_Transmit_Set(unsigned char Can_id,int objNo,unsigned char identifier_ty
 	CAN1_IF1CMSK_R|=(1<<7)|(1<<5)|(1<<4)|(1<<0)|(1<<1);//ARB, WRNRD, CONTROL, DATAA, DATAB bits set
 	CAN1_IF1MCTL_R|=(1<<12); //UMASK bit sets
 	CAN1_IF1ARB2_R|=(1<<13); //set dir bit
-	CAN1_IF1ARB2_R|=(1<<2); //MSG ID set to 0x01 in ARB2 reg
-	CAN1_IF1ARB2_R&=~(1<<14); //clear xtd bit to indicate a standard identifier
+	//CAN1_IF1ARB2_R|=(1<<2); //MSG ID set to 0x01 in ARB2 reg
+	//CAN1_IF1ARB2_R&=~(1<<14); //clear xtd bit to indicate a standard identifier
 	CAN1_IF1ARB2_R|=(1<<15);//set Msgval bit to indicate that message object is valid
 	
 	//data to be sent
